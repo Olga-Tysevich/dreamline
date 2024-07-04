@@ -11,13 +11,39 @@ import org.springframework.security.core.userdetails.UserDetails;
 import by.dreamlineproject.dreamline.entities.User;
 
 public class UserDetailsImpl implements UserDetails {
-	
+
 	private User user;
 	
 	public UserDetailsImpl(User user) {
 		this.user = user;
 	}
-	
+		
+	@Override
+	public boolean isAccountNonExpired() {
+		// TODO Auto-generated method stub
+		return UserDetails.super.isAccountNonExpired();
+	}
+
+
+	@Override
+	public boolean isAccountNonLocked() {
+		// TODO Auto-generated method stub
+		return UserDetails.super.isAccountNonLocked();
+	}
+
+
+	@Override
+	public boolean isCredentialsNonExpired() {
+		// TODO Auto-generated method stub
+		return UserDetails.super.isCredentialsNonExpired();
+	}
+
+
+	@Override
+	public boolean isEnabled() {
+		// TODO Auto-generated method stub
+		return UserDetails.super.isEnabled();
+	}
 	
 
 	@Override
@@ -29,14 +55,20 @@ public class UserDetailsImpl implements UserDetails {
 
 	@Override
 	public String getPassword() {
-		// TODO Auto-generated method stub
-		return null;
+		return user.getPassword();
 	}
 
 	@Override
 	public String getUsername() {
-		// TODO Auto-generated method stub
-		return null;
+		return user.getName();
+	}
+	
+	public Integer getId() {
+		return user.getId();
+	}
+	
+	public String getRole() {
+		return user.getRole();
 	}
 
 }

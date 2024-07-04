@@ -3,8 +3,14 @@ package by.dreamlineproject.dreamline.entities;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Builder;
+import lombok.AllArgsConstructor;
 
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @Getter
 @Entity
 @Table(name = "users")
